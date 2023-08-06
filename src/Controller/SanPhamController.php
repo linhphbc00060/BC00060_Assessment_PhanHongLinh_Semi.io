@@ -82,7 +82,7 @@ class SanPhamController extends AbstractController
         $em->flush();
         return new RedirectResponse($this->urlGenerator->generate('app_list_san_pham'));
     }
-    #[Route('/cate/{id}' name: 'app_list_category')]
+    #[Route('/cate/{id}', name: 'app_list_category')]
     public function listSPinCate(EntityManagerInterface $em, int $id, Request $req): Response
     {
         $cate = $em -> find(Category:: class, $id);
